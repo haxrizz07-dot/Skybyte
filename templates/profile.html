@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="card">
+  <div class="profile-header"><div class="avatar">❤</div><div><div class="profile-name">{{ profile.name if profile else 'LifeByte User' }}</div><div style="color:#ccc;">Your health profile at a glance</div></div></div>
+</section>
+<section class="card">
+  <h3>Health Summary</h3>
+  {% if profile %}
+  <div class="settings-list">
+    <div class="settings-item"><span>Diabetes</span><strong>{{ profile.diabetes }}</strong></div>
+    <div class="settings-item"><span>Blood Pressure</span><strong>{{ profile.blood_pressure }}</strong></div>
+    <div class="settings-item"><span>Calories</span><strong>{{ profile.calorie_goal }}</strong></div>
+    <div class="settings-item"><span>Diet</span><strong>{{ profile.preference }}</strong></div>
+  </div>
+  {% else %}
+  <p style="color:#f5e8b1;">No profile set yet. Fill in below to personalize your recommendations.</p>
+  {% endif %}
+</section>
+<section class="card">
+  <h3>Update Profile</h3>
+  <form id="profileUpdateForm" class="form-grid">
+    <label>Name <input name="name" required value="{{ profile.name if profile else '' }}" /></label>
+    <label>Age <input type="number" name="age" required value="{{ profile.age if profile else '' }}" /></label>
+    <label>Height (cm) <input type="number" step="0.1" name="height" required value="{{ profile.height if profile else '' }}" /></label>
+    <label>Weight (kg) <input type="number" step="0.1" name="weight" required value="{{ profile.weight if profile else '' }}" /></label>
+    <label>Blood Pressure <select name="blood_pressure"><option {% if profile and profile.blood_pressure=='Normal' %}selected{% endif %}>Normal</option><option {% if profile and profile.blood_pressure=='High' %}selected{% endif %}>High</option></select></label>
+    <label>Diabetes <select name="diabetes"><option {% if profile and profile.diabetes=='No' %}selected{% endif %}>No</option><option {% if profile and profile.diabetes=='Yes' %}selected{% endif %}>Yes</option></select></label>
+    <label>Calorie Goal <input type="number" name="calorie_goal" required value="{{ profile.calorie_goal if profile else '' }}" /></label>
+    <label>Food Preference <select name="preference"><option value="Veg" {% if profile and profile.preference=='Veg' %}selected{% endif %}>Veg</option><option value="Non-Veg" {% if profile and profile.preference=='Non-Veg' %}selected{% endif %}>Non-Veg</option><option value="Both" {% if profile and profile.preference=='Both' %}selected{% endif %}>Both</option></select></label>
+    <div class="full-row"><button type="submit" class="button-primary">Save Profile</button></div>
+  </form>
+  <p id="updateMsg" class="small"></p>
+</section>
+{% endblock %}

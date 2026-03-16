@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="card">
+  <div style="display:flex;justify-content:space-between;align-items:center;">
+    <div><h2>Nearby Restaurants</h2><p style="color:#d1c9b5;">Explore local food with health-aware choices.</p></div>
+    <div class="tag">Local</div>
+  </div>
+</section>
+<section class="card">
+  <button id="loadRestaurants" class="button-primary">Load Nearby Restaurants</button>
+  <div id="restaurantList" style="margin-top:.8rem;color:#f1f1f1;">Tap load to view nearby restaurants.</div>
+</section>
+<section class="card">
+  <h3>Hotel Food Availability</h3>
+  <p>Check if your dish is available and get recommended items.</p>
+  <div style="display:flex;gap:.5rem;flex-wrap:wrap;align-items:center;"><input id="foodQuery" placeholder="Enter dish name (e.g. Veg Quinoa Bowl)" style="flex:1;min-width:200px;padding:.45rem;border-radius:10px;border:1px solid #333;background:#111;color:#fff;"/><button id="checkFoodBtn" class="button-primary">Check</button></div>
+  <div id="availabilityResult" style="margin-top:.7rem;color:#fff;"></div>
+  <div id="recommendedDish" style="margin-top:.4rem;color:#f6e5aa;"></div>
+</section>
+<section class="card">
+  <h3>Smart Nearby Food</h3>
+  <p>Get recommended dishes from nearby hotel menus based on weather + health.</p>
+  <div style="display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;">
+    <select id="weatherSelect" style="padding:.45rem;border-radius:8px;background:#111;border:1px solid #333;color:#fff;">
+      <option value="sunny">Sunny</option>
+      <option value="rainy">Rainy</option>
+      <option value="cloudy">Cloudy</option>
+      <option value="cold">Cold</option>
+    </select>
+    <label><input type="checkbox" id="diabetic"/> Diabetic</label>
+    <label><input type="checkbox" id="low_sugar"/> Low Sugar</label>
+    <label><input type="checkbox" id="low_oil"/> Low Oil</label>
+    <label><input type="checkbox" id="vegetarian"/> Vegetarian</label>
+    <button id="smartFoodBtn" class="button-primary">Find Smart Food</button>
+  </div>
+  <div id="smartFoodResult" style="margin-top:.7rem;color:#f1f1f1;"></div>
+</section>
+<section class="card">
+  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;"><div><h3 style="margin-bottom:.3rem;">Smart Food Summary</h3><p style="color:#c7d4e8;">Category and route-aware recommendations</p></div><span class="tag">Smart</span></div>
+  <div id="smartSummary" class="card" style="background:rgba(17,25,45,.9);border:1px solid rgba(125,211,252,.2);border-radius:14px;margin-top:.7rem;padding:.8rem;">Use Find Smart Food to load personalized suggestions.</div>
+</section>
+{% endblock %}

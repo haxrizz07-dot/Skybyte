@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>LifeByte</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand-wrap">
+        <div class="big-logo" aria-label="LifeByte logo">
+          <svg viewBox="0 0 120 120" width="40" height="40" xmlns="http://www.w3.org/2000/svg">
+            <defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f4d18f"/><stop offset="100%" stop-color="#d4af37"/></linearGradient></defs>
+            <path d="M60 105C25 80 10 52 10 35C10 20 23 10 36 10C48 10 58 20 60 35C62 20 72 10 84 10C97 10 110 20 110 35C110 52 95 80 60 105Z" fill="url(#g1)"/>
+            <path d="M42 33C42 25 48 20 56 20C64 20 70 25 70 33C70 41 64 46 56 46C48 46 42 41 42 33Z" fill="#fff"/>
+            <path d="M76 33C76 25 82 20 90 20C98 20 104 25 104 33C104 41 98 46 90 46C82 46 76 41 76 33Z" fill="#fff"/>
+          </svg>
+        </div>
+        <div>
+          <div class="brand-name">LifeByte</div>
+          <div class="brand-sub">Eat smarter, live healthier</div>
+        </div>
+      </div>
+      <div class="logo-pill">LifeByte</div>
+    </header>
+    <main class="app-content">{% block content %}{% endblock %}</main>
+    <nav class="bottom-nav">
+      <a href="/" class="nav-item">🏠<span>Home</span></a>
+      <a href="/weather" class="nav-item">☁️<span>Weather</span></a>
+      <a href="/dishes" class="nav-item">🍽️<span>Food</span></a>
+      <a href="/restaurants" class="nav-item">📍<span>Nearby</span></a>
+      <a href="/profile" class="nav-item">👤<span>Profile</span></a>
+    </nav>
+  </div>
+  <script src="/static/script.js"></script>
+</body>
+</html>

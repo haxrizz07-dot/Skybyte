@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="card">
+  <div style="display:flex;justify-content:space-between;align-items:center;">
+    <div><h2>AI Recipe Generator</h2><p style="color:#d1c9b5;">Generate step-by-step recipes with Gemini.</p></div>
+    <div class="tag">AI</div>
+  </div>
+</section>
+<section class="card">
+  <div style="display:flex;gap:.5rem;flex-wrap:wrap;"><input id="mealQuery" placeholder="Enter meal name (e.g. Chicken)" style="flex:1;min-width:170px;padding:.45rem;border-radius:10px;border:1px solid #333;background:#111;color:#fff;"/><select id="recipeSource" style="padding:.45rem;border-radius:8px;background:#111;color:#fff;border:1px solid #444;"><option value="mealdb">OpenMealDB</option><option value="local">Local</option><option value="ai">AI Extractor</option></select></div>
+  <div style="display:flex;gap:.5rem;margin-top:.6rem;"><button id="getRecipe" class="button-primary">Search</button><button id="getAiRecipe" class="button-primary">Generate AI</button></div>
+  <p class="small">Tip: use the last selected dish from the Food page.</p>
+  <div id="recipeResult"></div>
+</section>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="card hero-card">
+  <div style="display:flex;justify-content:space-between;align-items:center;">
+    <div>
+      <h1>LifeByte</h1>
+      <p style="color:#ddd;">A premium lifestyle app for weather-smart health and food choices.</p>
+      <p id="weatherInfo" style="margin-top:.3rem;color:#f9df9a;">Loading weather...</p>
+      <p id="quote" class="quote">Eat Smarter, Live Healthier.</p>
+    </div>
+    <div class="big-logo glow">❤</div>
+  </div>
+</section>
+<section class="card">
+  <h3>Weather Guess</h3>
+  <div class="weather-buttons">
+    <button class="weather-btn option" data-answer="sunny">Sunny</button>
+    <button class="weather-btn option" data-answer="rainy">Rainy</button>
+    <button class="weather-btn option" data-answer="cloudy">Cloudy</button>
+    <button class="weather-btn option" data-answer="cold">Cold</button>
+  </div>
+  <p id="quizResult" style="margin-top:.5rem;color:#f9df9a;"></p>
+</section>
+<section class="card">
+  <h3>Quick Access</h3>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:.5rem;">
+    <a class="button-primary" href="/dishes">Smart Food</a>
+    <a class="button-primary" href="/restaurants">Nearby</a>
+    <a class="button-primary" href="/recipe">Recipe</a>
+    <a class="button-primary" href="/profile">Profile</a>
+  </div>
+</section>
+{% endblock %}

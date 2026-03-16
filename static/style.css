@@ -1,0 +1,41 @@
+﻿*{box-sizing:border-box;margin:0;padding:0;font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+:root{--bg:#0b0b0b;--panel:#121212;--text:#f5f5f5;--muted:#bdbdbd;--gold:#d4af37;--silver:#c0c0c0;--card:#191919;--border:#383838;--highlight:#f0d68f}
+body{background:#0b0b0b;color:var(--text);min-height:100vh;overflow-x:hidden}
+.app-shell{min-height:100vh;display:flex;flex-direction:column;background:radial-gradient(circle at top, #1f1f1f 0%, #0b0b0b 55%, #070707 100%);}
+.topbar{padding:.8rem 1rem;background:rgba(11,11,11,.92);border-bottom:1px solid #2f2f2f;backdrop-filter:blur(6px);display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:50;}
+.brand-wrap{display:flex;align-items:center;gap:.6rem;}
+.big-logo{width:46px;height:46px;display:grid;place-items:center;background:linear-gradient(135deg,#f9d57c,#d4af37);color:#111;border-radius:12px;font-size:1rem;font-weight:900;box-shadow:0 0 18px rgba(212,175,55,0.5);border:1px solid rgba(255,255,255,0.2);}
+.brand-name{font-size:1.1rem;font-weight:800;letter-spacing:.2px;color:#fff;}
+.brand-sub{font-size:.72rem;color:#dbd8d1;}
+.logo-pill{font-size:.75rem;font-weight:700;color:#111;background:linear-gradient(130deg,#f7dc95,#d4af37);padding:.2rem .6rem;border-radius:999px;}
+.app-content{padding:1rem;flex:1;}
+.bottom-nav{display:grid;grid-template-columns:repeat(5,1fr);gap:.25rem;background:rgba(7,7,7,.9);border-top:1px solid #222;padding:.4rem;position:sticky;bottom:0;z-index:20;}
+.nav-item{display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:.8rem;color:#d6d6d6;text-decoration:none;padding:.3rem 0;border-radius:10px;transition:.2s;}
+.nav-item span{margin-top:.15rem;font-size:.65rem;}
+.nav-item:hover{background:rgba(212,175,55,.12);color:#fff;}
+.app-content > section{margin-bottom:1rem;}
+.card{background:linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));border:1px solid rgba(212,175,55,.25);border-radius:18px;backdrop-filter:blur(6px);padding:1rem;box-shadow:0 10px 30px rgba(0,0,0,.45);}
+.hero-card{position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.08);background:linear-gradient(180deg, #171717, #101010);}
+.hero-card::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at top left, rgba(212,175,55,.15), transparent 45%);pointer-events:none;}
+.hero-card h1{font-size:1.7rem;margin-bottom:.4rem;color:#f7e3a6;z-index:1;position:relative;}
+.hero-card p{color:#d7d7d7;z-index:1;position:relative;}
+.weather-buttons{display:grid;grid-template-columns:repeat(4,1fr);gap:.4rem;margin-top:.7rem;}
+.weather-btn{background:#121212;border:1px solid #2f2f2f;color:#fff;padding:.55rem .35rem;border-radius:10px;font-weight:600;cursor:pointer;transition:.2s;}
+.weather-btn:hover{border-color:#d4af37;box-shadow:0 0 16px rgba(212,175,55,.2);}
+.glass-grid{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;}
+.glass-card{background:rgba(255,255,255,.04);border:1px solid rgba(228,188,90,.25);border-radius:14px;padding:.7rem;}
+.food-grid{display:grid;grid-template-columns:1fr;gap:.6rem;}
+.food-card{background:#121212;border:1px solid rgba(255,255,255,.08);border-left:4px solid #d4af37;border-radius:12px;padding:.75rem;display:grid;grid-template-columns:auto 1fr;gap:.6rem;align-items:center;}
+.food-thumb{width:62px;height:62px;border-radius:12px;background:linear-gradient(120deg,#2d2d2d,#111);display:grid;place-items:center;font-weight:700;}
+.food-info h4{margin-bottom:.15rem;font-size:1rem;color:#fff;}
+.food-info p{font-size:.8rem;color:#c9c9c9;}
+.tag{display:inline-block;padding:.15rem .45rem;border-radius:999px;font-size:.68rem;font-weight:700;letter-spacing:.2px;background:rgba(212,175,55,.14);color:#f8e6aa;margin-right:.3rem;}
+.profile-header{display:flex;gap:.65rem;align-items:center;}
+.avatar{width:63px;height:63px;border-radius:18px;background:linear-gradient(145deg,#f5d38a,#d4af37);display:grid;place-items:center;font-size:1.4rem;font-weight:800;color:#111;box-shadow:0 0 14px rgba(212,175,55,.35);}
+.profile-name{font-size:1.15rem;color:#fff;font-weight:800;}
+.settings-list{margin-top:.7rem;} .settings-item{padding:.65rem .6rem;border-radius:12px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.08);margin-top:.4rem;display:flex;justify-content:space-between;align-items:center;}
+.button-primary{background:linear-gradient(130deg,#c0c0c0,#e5e5e5);color:#111;border:none;border-radius:10px;padding:.45rem .8rem;font-weight:700;box-shadow:0 0 10px rgba(255,255,255,.2);}
+@keyframes glowPulse{0%{box-shadow:0 0 10px rgba(212,175,55,.3);}50%{box-shadow:0 0 22px rgba(212,175,55,.6);}100%{box-shadow:0 0 10px rgba(212,175,55,.3);}}
+.glow{animation:glowPulse 3s ease-in-out infinite;}
+@media (max-width:760px){.app-content{padding:.8rem}.glass-grid{grid-template-columns:1fr}.weather-buttons{grid-template-columns:repeat(2,1fr)} }
+

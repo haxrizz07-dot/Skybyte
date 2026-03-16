@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="card">
+  <div style="display:flex;justify-content:space-between;align-items:center;">
+    <div><h2>Smart Food Recommendations</h2><p style="color:#d1c9b5;">Weather + health optimized choices.</p></div>
+    <div class="tag">Smart</div>
+  </div>
+</section>
+<section id="dishesContainer" class="card">Loading dishes...</section>
+<div id="popup" class="popup hidden"><div class="popup-body"><button id="closePopup" class="close">×</button><div id="popupContent"></div></div></div>
+{% endblock %}
